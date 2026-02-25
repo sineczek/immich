@@ -1,0 +1,103 @@
+# ===== Ogólne =====
+# System / edytory
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.swn
+.vscode/
+.idea/
+*.code-workspace
+
+# Logi i cache
+logs/
+*.log
+log.txt
+debug.log
+.cache/
+.tmp/
+temp/
+tmp/
+
+# Pliki środowiskowe / sekrety (dla wszystkich podkatalogów)
+.env
+.env.*
+*.env
+*.env.*
+
+# ===== Node / Frontend (jeśli gdzieś użyte) =====
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+dist/
+build/
+*.tsbuildinfo
+
+# ===== Python (masz skrypty .py) =====
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.eggs/
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# ===== Docker / Compose =====
+# Trzymaj pliki compose w repo, ale ignoruj dane/volumeny i lokalne env
+docker/*.env
+**/docker/*.env
+**/docker/*/data/
+**/docker/*/cache/
+**/docker/*/redis/
+**/docker/*/postgres/
+**/docker/*/data/
+**/volumes/
+**/volume/
+**/data/
+**/upload/
+**/backup/
+**/backups/
+
+# ===== Specyficzne dla Twojego drzewa =====
+
+# /opt/containerd — niech git tego nie dotyka
+containerd/
+
+# Immich główny
+immich/postgres/
+immich/backup/
+immich/**/data/
+immich/**/volumes/
+immich/**/uploads/
+immich/**/cache/
+immich/**/tmp/
+
+# Immich Power Tools
+immich-power-tools/**/data/
+immich-power-tools/**/volumes/
+immich-power-tools/**/cache/
+immich-power-tools/*.env
+immich-power-tools/.env*
+immich-power-tools/*.local
+
+# Hawser
+hawser/*.env
+hawser/.env*
+hawser/**/data/
+hawser/**/volumes/
+
+# Stacks (jeśli trzymasz stosy/volumeny tutaj)
+stacks/**/data/
+stacks/**/volumes/
+stacks/**/backup/
+stacks/**/tmp/
+stacks/**/cache/
+
+# ===== OS / narzędzia =====
+*.local
+``

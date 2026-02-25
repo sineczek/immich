@@ -1,0 +1,22 @@
+services:
+  immich_power_tools:
+    container_name: immich_power_tools
+    image: ghcr.io/varun-raj/immich-power-tools:latest
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    restart: unless-stopped
+    networks:
+      - immich_net
+    healthcheck:
+      test: ["CMD-SHELL", "wget -S --spider http://immich-server:2283/ 2>&1 | grep -q 'HTTP/'"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+networks:
+  immich_net:
+    external: true
+    name: immich_default

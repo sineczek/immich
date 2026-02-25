@@ -1,0 +1,14 @@
+services:
+  hawser:
+    image: ghcr.io/finsys/hawser:latest
+    container_name: hawser
+    ports:
+      - "2376:2376"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - hawser_stacks:/data/stacks
+    restart: unless-stopped
+
+volumes:
+  hawser_stacks:
+
