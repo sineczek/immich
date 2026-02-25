@@ -100,4 +100,7 @@ stacks/**/cache/
 
 # ===== OS / narzędzia =====
 *.local
-``
+
+# ===== O6 / wyjątki =====
+!.env.example
+
